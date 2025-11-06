@@ -1,0 +1,12 @@
+/* Minimal global styles to complement Bootstrap */
+:root { --brand: #0d6efd; }
+body { background-color: #f8f9fa; }
+.card { border: 0; }
+.card .card-body { background: #fff; }
+
+/* Forms */
+form .form-control.is-invalid { border-color: #dc3545; }
+form .form-control.is-valid { border-color: #198754; }
+
+/* Utilities */
+.d-none { display: none !important; }
