@@ -24,7 +24,7 @@
     }
 
     $.ajax({
-      url: '/php/register.php',
+      url: '/guvi-internship/backend/register.php',
       method: 'POST',
       dataType: 'json',
       data: { username, email, password },

@@ -26,7 +26,7 @@
   // Fetch profile data from backend
   function fetchProfile() {
     $.ajax({
-      url: '/php/profile.php',
+      url: '/guvi-internship/backend/profile.php',
       method: 'GET',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
@@ -72,7 +72,7 @@
     };
 
     $.ajax({
-      url: '/php/profile.php',
+      url: '/guvi-internship/backend/profile.php',
       method: 'POST',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
