@@ -34,7 +34,7 @@ form .form-control.is-valid { border-color: #198754; }
 	border-color: rgba(255,122,89,.6);
 	box-shadow: 0 0 0 .2rem rgba(255,122,89,.2);
 }
-.pw-eye { font-size: 1rem; line-height: 1; }
+.pw-eye { display: inline-flex; align-items: center; line-height: 1; }
 
 /* Themed Navbar */
 .navbar-warm {
