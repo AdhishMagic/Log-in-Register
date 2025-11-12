@@ -1,5 +1,5 @@
 <?php
-require __DIR__ . '/db/mysql.php';
+require __DIR__ . '/db/db.php';
 require __DIR__ . '/utils.php';
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {

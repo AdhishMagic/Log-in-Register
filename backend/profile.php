@@ -1,6 +1,5 @@
 <?php
-require __DIR__ . '/db/redis.php';
-require __DIR__ . '/db/mongo.php';
+require __DIR__ . '/db/db.php';
 require __DIR__ . '/utils.php';
 
 $method = $_SERVER['REQUEST_METHOD'];

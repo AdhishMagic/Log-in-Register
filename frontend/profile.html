@@ -3,39 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Profile • Secure App</title>
+  <title>Profile • Fireside Login</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link rel="stylesheet" href="css/style.css" />
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<body class="auth-page">
+  <nav class="navbar navbar-expand-lg navbar-warm">
     <div class="container">
-      <a class="navbar-brand" href="login.html">Secure App</a>
-      <div class="ms-auto d-flex gap-2">
-        <button id="logoutBtn" class="btn btn-outline-light">Logout</button>
+  <a class="navbar-brand" href="profile.html">Fireside Login <span class="brand-accent">Beta</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navProfile" aria-controls="navProfile" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navProfile">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <li class="nav-item"><a class="nav-link d-none d-lg-inline" href="#" aria-disabled="true">Profile</a></li>
+          <li class="nav-item"><button id="logoutBtn" class="btn btn-outline-light">Logout</button></li>
+        </ul>
       </div>
     </div>
   </nav>
 
-  <main class="container py-4">
-    <div class="row g-4">
+  <main class="container py-5">
+    <div class="row g-4 justify-content-center">
       <div class="col-lg-4">
-        <div class="card shadow-sm h-100">
-          <div class="card-body">
-            <h2 class="h5">User</h2>
-            <dl class="row mb-0" id="userDetails">
-              <dt class="col-4">Username</dt>
-              <dd class="col-8" id="d-username">—</dd>
-              <dt class="col-4">Email</dt>
-              <dd class="col-8" id="d-email">—</dd>
+        <div class="card shadow-lg auth-card h-100">
+          <div class="card-body p-4">
+            <h2 class="h5 mb-3">Account</h2>
+            <dl class="row mb-0 small" id="userDetails">
+              <dt class="col-5">Username</dt>
+              <dd class="col-7" id="d-username">—</dd>
+              <dt class="col-5">Email</dt>
+              <dd class="col-7" id="d-email">—</dd>
             </dl>
           </div>
         </div>
       </div>
       <div class="col-lg-8">
-        <div class="card shadow-sm">
+        <div class="card shadow-lg auth-card">
           <div class="card-body p-4 p-md-5">
-            <h2 class="h5 mb-4">Additional details</h2>
+            <div class="mb-4 text-center">
+              <h2 class="h5 mb-1">Profile details</h2>
+              <p class="text-secondary mb-0 small">Update your personal information</p>
+            </div>
             <form id="profileForm" novalidate>
               <div class="row g-3">
                 <div class="col-md-6">
@@ -55,11 +65,15 @@
                   <textarea class="form-control" id="address" rows="3" maxlength="256"></textarea>
                 </div>
               </div>
-              <div class="d-grid mt-4">
-                <button type="submit" class="btn btn-primary">Save changes</button>
+              <div class="d-flex justify-content-end gap-3 mt-4">
+                <button type="button" class="btn btn-outline-secondary" id="btnReset" title="Clear fields">Reset</button>
+                <button type="submit" class="btn btn-brand" id="btnSave">
+                  <span class="spinner-border spinner-border-sm me-2 d-none" role="status" aria-hidden="true" id="saveSpinner"></span>
+                  <span>Save changes</span>
+                </button>
               </div>
             </form>
-            <div id="profileAlert" class="alert mt-3 d-none" role="alert"></div>
+            <div id="profileAlert" class="alert mt-3 d-none" role="alert" aria-live="polite"></div>
           </div>
         </div>
       </div>

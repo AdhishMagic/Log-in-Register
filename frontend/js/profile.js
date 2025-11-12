@@ -14,7 +14,7 @@
 
   function showAlert(message, type) {
     const el = $('#profileAlert');
-    el.removeClass('d-none alert-success alert-danger alert-warning').addClass('alert-' + type).text(message);
+    el.removeClass('d-none alert-success alert-danger alert-warning alert-info').addClass('alert-' + type).text(message);
   }
 
   // Prefill core user details from localStorage if available
@@ -25,8 +25,9 @@
 
   // Fetch profile data from backend
   function fetchProfile() {
+    showAlert('Loading profile…', 'info');
     $.ajax({
-      url: '/guvi-internship/backend/profile.php',
+      url: '../backend/profile.php',
       method: 'GET',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
@@ -42,6 +43,7 @@
             $('#contact').val(res.profile.contact || '');
             $('#address').val(res.profile.address || '');
           }
+          $('#profileAlert').addClass('d-none');
         } else {
           // Invalid token or other error – force logout
           doLogout();
@@ -62,6 +64,13 @@
 
   $('#logoutBtn').on('click', function () { doLogout(); });
 
+  $('#btnReset').on('click', function(){
+    $('#age').val('');
+    $('#dob').val('');
+    $('#contact').val('');
+    $('#address').val('');
+  });
+
   $('#profileForm').on('submit', function (e) {
     e.preventDefault();
     const payload = {
@@ -71,8 +80,13 @@
       address: $('#address').val().trim() || null
     };
 
+    const $btn = $('#btnSave');
+    const $spin = $('#saveSpinner');
+    $btn.prop('disabled', true); $spin.removeClass('d-none');
+    showAlert('Saving…', 'info');
+
     $.ajax({
-      url: '/guvi-internship/backend/profile.php',
+      url: '../backend/profile.php',
       method: 'POST',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
@@ -90,7 +104,8 @@
         let msg = 'An error occurred.';
         try { msg = (xhr.responseJSON && xhr.responseJSON.error) || msg; } catch (_) {}
         showAlert(msg, 'danger');
-      }
+      },
+      complete: function(){ $btn.prop('disabled', false); $spin.addClass('d-none'); }
     });
   });
 
