@@ -72,7 +72,7 @@
     showAlert('Creating your account…', 'info');
 
     $.ajax({
-      url: '../backend/register.php',
+      url: '../php/register.php',
       method: 'POST',
       dataType: 'json',
       data: payload,

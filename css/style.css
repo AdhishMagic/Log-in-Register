@@ -1,0 +1,169 @@
+/* Minimal global styles to complement Bootstrap */
+:root { 
+	--brand: #658C58; /* green */ 
+	--color-1: #F0E491; /* light yellow */
+	--color-2: #BBC863; /* yellow-green */
+	--color-3: #658C58; /* sage green */
+	--color-4: #31694E; /* dark green */
+}
+body { background-color: #f8f9fa; }
+.card { border: 0; }
+.card .card-body { background: #fff; }
+
+/* Forms */
+form .form-control.is-invalid { border-color: #dc3545; }
+form .form-control.is-valid { border-color: #658C58; }
+
+/* Utilities */
+.d-none { display: none !important; }
+.min-vh-75 { min-height: 75vh !important; }
+.text-break { word-wrap: break-word !important; word-break: break-word !important; }
+
+/* Auth pages enhancements */
+.auth-page {
+	min-height: 100vh;
+	background: linear-gradient(135deg, #F0E491 0%, #BBC863 40%, #658C58 80%, #31694E 100%);
+	background-attachment: fixed;
+}
+.auth-page .navbar {
+	background: rgba(49,105,78,0.85) !important;
+	backdrop-filter: saturate(120%) blur(6px);
+}
+.auth-card {
+	border-radius: 1rem;
+	box-shadow: 0 1rem 2rem rgba(49,105,78,0.2) !important;
+	animation: fadeInUp .35s ease-out both;
+}
+.auth-page .card .card-body {
+	background: rgba(255,255,255,0.95);
+	backdrop-filter: blur(6px);
+}
+.auth-page .form-control:focus {
+	border-color: rgba(101,140,88,.7);
+	box-shadow: 0 0 0 .2rem rgba(101,140,88,.25);
+}
+.pw-eye { display: inline-flex; align-items: center; line-height: 1; }
+
+/* Themed Navbar */
+.navbar-warm {
+	background: linear-gradient(135deg, #31694E 0%, #658C58 50%, #BBC863 100%);
+	backdrop-filter: blur(10px) saturate(180%);
+	box-shadow: 0 0.5rem 1rem rgba(49,105,78,0.4);
+	border-bottom: 2px solid rgba(240,228,145,0.3);
+}
+.navbar-warm .navbar-brand {
+	font-weight: 700;
+	letter-spacing: .5px;
+	color: #F0E491 !important;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+.navbar-warm .nav-link, .navbar-warm .btn-outline-light {
+	border-color: rgba(240,228,145,.8);
+	color: #F0E491;
+	text-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+.navbar-warm .btn-outline-light:hover, .navbar-warm .btn-outline-light:focus {
+	background: rgba(240,228,145,.2);
+	color: #F0E491;
+	transform: translateY(-1px);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.navbar-warm .btn-outline-light:active {
+	background: rgba(240,228,145,.3);
+	transform: translateY(0);
+}
+
+/* Responsive enhancements */
+@media (max-width: 575.98px) {
+	.navbar-warm .btn-outline-light { padding: .35rem .75rem; font-size: .8rem; }
+	.navbar-warm .navbar-brand { font-size: 1.05rem; }
+	.auth-card { border-radius: .75rem; }
+	.card-body { padding: 1rem !important; }
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+	.card-body { padding: 1.25rem !important; }
+}
+
+@media (min-width: 768px) {
+	.auth-card { border-radius: 1.25rem; }
+}
+
+/* Brand button */
+.btn-brand {
+	color: #fff;
+	background: linear-gradient(135deg, #658C58, #BBC863);
+	border: none;
+	box-shadow: 0 4px 8px rgba(101,140,88,0.3);
+}
+.btn-brand:hover, .btn-brand:focus {
+	color: #fff;
+	background: linear-gradient(135deg, #31694E, #658C58);
+	box-shadow: 0 6px 12px rgba(49,105,78,0.4);
+}
+.btn-brand:disabled {
+	opacity: .85;
+}
+
+@keyframes fadeInUp {
+	from { opacity: 0; transform: translate3d(0, 10px, 0); }
+	to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+
+/* Profile Page Styles */
+.profile-avatar-wrapper {
+	border: 3px solid rgba(255,255,255,0.9);
+	transition: all 0.3s ease;
+}
+
+.profile-avatar-wrapper:hover {
+	transform: scale(1.05);
+	box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.2) !important;
+}
+
+#userAvatar {
+	transition: all 0.3s ease;
+}
+
+.badge {
+	font-weight: 500;
+	padding: 0.5rem 0.75rem;
+	font-size: 0.85rem;
+}
+
+/* Profile info display enhancements */
+#profileInfoDisplay .border-bottom:last-child {
+	border-bottom: none !important;
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+#profileInfoDisplay p {
+	font-size: 1.05rem;
+	transition: color 0.2s ease;
+}
+
+#profileInfoDisplay .text-primary {
+	color: #658C58 !important;
+}
+
+/* Card header icons */
+.card-body h2 svg {
+	transition: transform 0.2s ease;
+}
+
+.card-body:hover h2 svg {
+	transform: scale(1.1);
+}
+
+/* Smooth transitions */
+.form-control, .btn {
+	transition: all 0.2s ease;
+}
+
+/* Read-only field styling */
+.form-control[readonly] {
+	background-color: #f8f9fa !important;
+	cursor: not-allowed;
+	border-style: dashed;
+}
