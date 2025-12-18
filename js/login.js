@@ -62,7 +62,7 @@
     showAlert('Signing in…', 'info');
 
     $.ajax({
-      url: '../php/login.php',
+      url: 'php/login.php',
       method: 'POST',
       dataType: 'json',
       data: payload,

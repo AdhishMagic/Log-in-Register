@@ -90,7 +90,7 @@
   function fetchProfile() {
     showAlert('Loading profile…', 'info');
     $.ajax({
-      url: '../php/profile.php',
+      url: 'php/profile.php',
       method: 'GET',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
@@ -192,7 +192,7 @@
     showAlert('Saving…', 'info');
 
     $.ajax({
-      url: '../php/profile.php',
+      url: 'php/profile.php',
       method: 'POST',
       dataType: 'json',
       headers: { 'X-Session-Token': token },
