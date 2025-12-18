@@ -1,18 +1,18 @@
 /* Minimal global styles to complement Bootstrap */
 :root { 
-	--brand: #658C58; /* green */ 
-	--color-1: #F0E491; /* light yellow */
-	--color-2: #BBC863; /* yellow-green */
-	--color-3: #658C58; /* sage green */
-	--color-4: #31694E; /* dark green */
+	--brand: #C9B59C;
+	--color-1: #F9F8F6;
+	--color-2: #EFE9E3;
+	--color-3: #D9CFC7;
+	--color-4: #C9B59C;
 }
-body { background-color: #f8f9fa; }
+body { background-color: var(--color-1); }
 .card { border: 0; }
 .card .card-body { background: #fff; }
 
 /* Forms */
 form .form-control.is-invalid { border-color: #dc3545; }
-form .form-control.is-valid { border-color: #658C58; }
+form .form-control.is-valid { border-color: var(--brand); }
 
 /* Utilities */
 .d-none { display: none !important; }
@@ -22,54 +22,55 @@ form .form-control.is-valid { border-color: #658C58; }
 /* Auth pages enhancements */
 .auth-page {
 	min-height: 100vh;
-	background: linear-gradient(135deg, #F0E491 0%, #BBC863 40%, #658C58 80%, #31694E 100%);
+	background: linear-gradient(135deg, var(--color-1) 0%, var(--color-2) 40%, var(--color-3) 80%, var(--color-4) 100%);
 	background-attachment: fixed;
 }
 .auth-page .navbar {
-	background: rgba(49,105,78,0.85) !important;
+	background: rgba(201,181,156,0.92) !important;
 	backdrop-filter: saturate(120%) blur(6px);
 }
 .auth-card {
 	border-radius: 1rem;
-	box-shadow: 0 1rem 2rem rgba(49,105,78,0.2) !important;
+	box-shadow: 0 1rem 2rem rgba(0,0,0,0.10) !important;
 	animation: fadeInUp .35s ease-out both;
 }
 .auth-page .card .card-body {
 	background: rgba(255,255,255,0.95);
 	backdrop-filter: blur(6px);
+	border-radius: 1.5rem;
 }
 .auth-page .form-control:focus {
-	border-color: rgba(101,140,88,.7);
-	box-shadow: 0 0 0 .2rem rgba(101,140,88,.25);
+	border-color: rgba(201,181,156,.75);
+	box-shadow: 0 0 0 .2rem rgba(201,181,156,.30);
 }
 .pw-eye { display: inline-flex; align-items: center; line-height: 1; }
 
 /* Themed Navbar */
 .navbar-warm {
-	background: linear-gradient(135deg, #31694E 0%, #658C58 50%, #BBC863 100%);
+	background: linear-gradient(135deg, var(--color-4) 0%, var(--color-3) 60%, var(--color-2) 100%);
 	backdrop-filter: blur(10px) saturate(180%);
-	box-shadow: 0 0.5rem 1rem rgba(49,105,78,0.4);
-	border-bottom: 2px solid rgba(240,228,145,0.3);
+	box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.12);
+	border-bottom: 2px solid rgba(249,248,246,0.55);
 }
 .navbar-warm .navbar-brand {
 	font-weight: 700;
 	letter-spacing: .5px;
-	color: #F0E491 !important;
+	color: #212529 !important;
 	text-shadow: 0 2px 4px rgba(0,0,0,0.2);
 }
 .navbar-warm .nav-link, .navbar-warm .btn-outline-light {
-	border-color: rgba(240,228,145,.8);
-	color: #F0E491;
+	border-color: rgba(33,37,41,.45);
+	color: #212529;
 	text-shadow: 0 1px 2px rgba(0,0,0,0.15);
 }
 .navbar-warm .btn-outline-light:hover, .navbar-warm .btn-outline-light:focus {
-	background: rgba(240,228,145,.2);
-	color: #F0E491;
+	background: rgba(249,248,246,.45);
+	color: #212529;
 	transform: translateY(-1px);
 	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 .navbar-warm .btn-outline-light:active {
-	background: rgba(240,228,145,.3);
+	background: rgba(249,248,246,.60);
 	transform: translateY(0);
 }
 
@@ -91,15 +92,15 @@ form .form-control.is-valid { border-color: #658C58; }
 
 /* Brand button */
 .btn-brand {
-	color: #fff;
-	background: linear-gradient(135deg, #658C58, #BBC863);
+	color: #212529;
+	background: linear-gradient(135deg, var(--color-4), var(--color-3));
 	border: none;
-	box-shadow: 0 4px 8px rgba(101,140,88,0.3);
+	box-shadow: 0 4px 8px rgba(0,0,0,0.12);
 }
 .btn-brand:hover, .btn-brand:focus {
-	color: #fff;
-	background: linear-gradient(135deg, #31694E, #658C58);
-	box-shadow: 0 6px 12px rgba(49,105,78,0.4);
+	color: #212529;
+	background: linear-gradient(135deg, var(--color-4), var(--color-2));
+	box-shadow: 0 6px 12px rgba(0,0,0,0.16);
 }
 .btn-brand:disabled {
 	opacity: .85;
@@ -144,7 +145,7 @@ form .form-control.is-valid { border-color: #658C58; }
 }
 
 #profileInfoDisplay .text-primary {
-	color: #658C58 !important;
+	color: var(--brand) !important;
 }
 
 /* Card header icons */
